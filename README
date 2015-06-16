@@ -2,7 +2,7 @@ NAME
     DBIx::ThinSQL::SQLite - add various functions to SQLite
 
 VERSION
-    0.0.10 (2014-04-23) Development release.
+    0.0.12 (2015-06-16) Development release.
 
 SYNOPSIS
         use DBIx::ThinSQL;
@@ -59,6 +59,12 @@ DESCRIPTION
             @items begins with "/^select/i" then that statement will be run
             and the result logged using "log_debug" from DBIx::ThinSQL
             instead.
+
+        warn( @items )
+            This function called from SQL context logs @items using Perl's
+            "warn" function. If the first item of @items begins with
+            "/^select/i" then that statement will be run using the current
+            handle and the result warned instead.
 
         create_sequence( $name )
             Create a sequence in the database with name $name.
